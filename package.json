@@ -1,0 +1,13 @@
+{
+  "name": "stickman-playground",
+  "version": "1.0.0",
+  "private": true,
+  "description": "커서로 147가지 상호작용을 할 수 있고 혼자서도 화면을 돌아다니는 졸라맨",
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes serve .",
+    "start": "npx --yes serve ."
+  },
+  "keywords": ["stickman", "canvas", "animation", "ragdoll", "vercel"],
+  "license": "MIT"
+}
