@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: "ss01", "tnum";
+  }
+
+  /* 숫자(거리·대기 대수)는 항상 자리수가 흔들리지 않게 */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :where(a, button, [tabindex]):focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-brand px-8
+           text-base font-semibold text-white transition-colors hover:bg-brand-dark
+           disabled:cursor-not-allowed disabled:bg-ink-faint;
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-line
+           bg-white px-5 text-sm font-medium text-ink transition-colors hover:border-line-strong hover:bg-surface;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Kakao 지도 기본 로고/저작권 영역이 카드 밖으로 튀지 않도록 */
+.kakao-map-root img {
+  max-width: none;
+}
